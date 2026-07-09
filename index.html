@@ -388,9 +388,34 @@ function draw(){
         manc;
 
     let stato =
-        document.getElementById('stato');
+    document.getElementById('stato');
 
-let percentualeRaggiunta =
+if(percP >= targetPresenza){
+
+    stato.textContent =
+        '✅ IN REGOLA';
+
+    stato.className = 'ok';
+
+}
+else if(percP >= 36){
+
+    stato.textContent =
+        `🟠 SEI QUASI IN REGOLA (${percP.toFixed(2)}%)`;
+
+    stato.className = 'quasi';
+
+}
+else{
+
+    stato.textContent =
+        `❌ NON IN REGOLA (${percP.toFixed(2)}%)`;
+
+    stato.className = 'ko';
+
+}
+
+}
 
 month.onchange=draw;
 year.onchange=draw;
